@@ -2,17 +2,15 @@
 
 > A practical guide to understanding dimensionality reduction techniques and their real-world applications.
 
-## 📌 Executive Summary
-
-- **Dimensionality Reduction (DR)** helps convert high-dimensional data into a lower-dimensional format while retaining crucial information.
-
-- It improves model performance, speeds up computation, and aids visualization.
 
 ## 📖 Introduction
 
-Dimensionality reduction reduces the number of input variables while preserving data structure and insights.
+**Def**: Dimensionality reduction (DR) transforms high-dimensional data (e.g., 1000 features) into a lower-dimensional space (e.g., 3 features) while preserving critical patterns. 
 
-Analogy: like compressing a high-resolution image without losing key details.
+**Analogy**: Like compressing a high-resolution photo into a smaller file without losing recognizability.
+* **Key Vocabulary**
+    - **Feature**: An individual measurable property or characteristic of a dataset.
+    - **Dimension**: Each feature represents a dimension in the data space.
 
 ## 🧠 When to Use DR
 
