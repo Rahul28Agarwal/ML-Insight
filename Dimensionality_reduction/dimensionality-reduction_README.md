@@ -12,13 +12,15 @@
     - **Feature**: An individual measurable property or characteristic of a dataset.
     - **Dimension**: Each feature represents a dimension in the data space.
 
-## 🧠 When to Use DR
+## 🧠 When to Use Dimensionality Reduction
 
 - Training is slow due to many features
 
 - Features are highly correlated (e.g., > 0.8)
 
 - Model accuracy plateaus with more features
+
+![alt text](dr_use.png)
 
 ## 🔥 Why It Matters
 
