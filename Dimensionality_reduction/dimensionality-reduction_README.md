@@ -60,6 +60,32 @@
 - **Pros**: Captures more structure, powerful.
 - **Cons**: Less interpretable, can be complex.
 
+```mermaid
+flowchart LR
+    A[Dimensionality Reduction]
+    A --> B[Feature Selection]
+    A --> C[Feature Extraction Projection]
+
+    B --> B1[Filter Methods]
+    B --> B2[Wrapper Methods]
+    B --> B3[Embedded Methods]
+
+    C --> C1[Linear Methods]
+    C --> C2[Nonlinear Methods]
+
+    B1 --> D1[Variance Threshold]
+    B1 --> D2[Correlation-based]
+    B2 --> D3[Recursive Feature Elimination]
+    B3 --> D4[LASSO, Tree-based]
+
+    C1 --> E1[PCA]
+    C1 --> E2[Linear Discriminant Analysis]
+    C2 --> E3[t-SNE]
+    C2 --> E4[UMAP]
+    C2 --> E5[Autoencoders]
+
+```
+
 ## 🔍 Choosing the Right Technique
 
 ```mermaid
@@ -75,13 +101,23 @@ F -- Compression --> H[Autoencoders, LLE]
 
 ## 📊 Comparison Table
 
-| Technique       | Type       | Goal                        | Strengths                        | Weaknesses                     |
-|----------------|------------|-----------------------------|----------------------------------|--------------------------------|
-| PCA            | Linear     | Max variance projection     | Fast, interpretable              | Not suitable for nonlinear     |
-| LDA            | Linear     | Max class separation        | Good for classification          | Needs labels, linear boundary  |
-| t-SNE          | Nonlinear  | Local similarity preserve   | Excellent visualization          | Slow, poor global structure    |
-| UMAP           | Nonlinear  | Local + global preservation | Fast, better than t-SNE in scale | Sensitive to parameters        |
-| Autoencoders   | Nonlinear  | Neural representation       | Handles complexity, denoising    | Needs large data, less interpretable |
+| Technique       | Type       | Mechanism / Goal                     | Strengths                                | Weaknesses                               |
+|----------------|------------|--------------------------------------|-------------------------------------------|-------------------------------------------|
+| **PCA** (Principal Component Analysis) | Linear     | Maximize variance via orthogonal projection | Fast, interpretable, unsupervised         | Not effective for nonlinear relationships |
+| **LDA** (Linear Discriminant Analysis) | Linear     | Maximize class separability (supervised)    | Good for classification, interpretable    | Requires class labels, assumes linearity  |
+| **ICA** (Independent Component Analysis) | Linear  | Extract statistically independent components | Reveals hidden factors in data            | Sensitive to noise, assumes independence  |
+| **Kernel PCA** | Nonlinear  | Nonlinear extension of PCA via kernel trick | Captures complex structure                | Computationally expensive                 |
+| **t-SNE** (t-Distributed Stochastic Neighbor Embedding) | Nonlinear | Preserve local similarities using probability distributions | Great for visualization, cluster discovery | Poor for global structure, slow on large datasets |
+| **UMAP** (Uniform Manifold Approximation and Projection) | Nonlinear | Preserve both local and global structure   | Fast, scalable, preserves structure better than t-SNE | Sensitive to parameters, less interpretable |
+| **Isomap** | Nonlinear  | Preserve geodesic (manifold) distances      | Captures global manifold structure        | Sensitive to noise, computationally heavy |
+| **LLE** (Locally Linear Embedding) | Nonlinear  | Preserve local linear relationships         | Unfolds nonlinear manifolds effectively   | Sensitive to noise and parameters         |
+| **Autoencoders** | Nonlinear  | Learn compressed representations via neural networks | Flexible, handles complex patterns, supports denoising | Requires large data, hard to interpret     |
+| **NMF** (Non-negative Matrix Factorization) | Linear  | Factorize into non-negative components      | Interpretable, parts-based representation | Only for non-negative data                |
+| **Random Projection** | Linear     | Use random matrices to reduce dimensionality | Extremely fast, preserves distances approximately | Loss of interpretability                  |
+| **Laplacian Eigenmaps** | Nonlinear  | Preserve local neighborhood graph structure | Good for local clustering, spectral methods | Sensitive to graph construction choices   |
+| **Diffusion Maps** | Nonlinear  | Use diffusion process to model manifold geometry | Robust to noise, captures connectivity    | Computationally intensive                 |
+| **Sammon Mapping** | Nonlinear  | Preserve pairwise distances emphasizing small distances | Good local structure visualization        | Slow, sensitive to initialization         |
+| **Feature Selection** (Filters, Wrappers, Embedded) | N/A        | Select relevant features using stats or models | Simple, improves interpretability         | May miss interactions, not always optimal |
 
 
 ## 🧪 Case Studies
