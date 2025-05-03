@@ -24,27 +24,41 @@
 
 ## 🔥 Why It Matters
 
-- **Curse of Dimensionality**: More dimensions make data sparse and models prone to overfitting
+- **Curse of Dimensionality**: As feature count increases, data becomes sparse, models overfit, and computations become expensive.
 
-- **Improved Generalization**
+- **Improved Generalization**: Simplifies learning, potentially leading to better accuracy and generalization.
 
-- **Visualization and Noise Reduction**
+- **Visualization**: Makes it feasible to plot and interpret high-dimensional data.
+- **Noise Reduction**: Removes irrelevant/noisy features, improving signal-to-noise ratio.
 
-## ⚙️ Techniques for Dimensionality Reduction
+## ⚙️ Main Approaches for dimensionality reduction. 
 
-### 🔹 Feature Selection
+### 1. Feature Selection
+- **Definition**: Choosing a subset of the original features (columns) that are most relevant to the task.
+- **Goal**: Remove redundant, irrelevant, or noisy features while keeping the data interpretable.
+- **Techniques**:
+    - **Filter Methods**: Use statistical measures (e.g., variance threshold, correlation-based selection).
+    - **Wrapper Methods**: Evaluate different feature subsets using model performance (e.g., recursive feature elimination).
+    - **Embedded Methods**: Feature selection integrated into model training (e.g., LASSO, tree-based models).
+- **Pros**: Simple, interpretable, fast.
+- **Cons**: May miss important feature interactions.
 
-- Techniques: Filter, Wrapper, Embedded (e.g., LASSO)
-
-- ✅ Pros: Interpretable and fast
-- ❌ Cons: May miss interactions
-
-### 🔸 Feature Extraction (Projection)
-
-- Techniques: PCA, LDA, ICA, t-SNE, UMAP, Autoencoders
-
-- ✅ Pros: Powerful, structure-preserving
-- ❌ Cons: Less interpretable, complex
+### 2. Feature Extraction (Projection)
+- **Definition:** Transforming the original features into a new set of features (components) that capture the most important information.
+- **Goal:** Compress data into fewer dimensions, often by combining features in ways that maximize variance or preserve structure.
+- **Techniques**:
+    - **Linear Methods**:
+        - **Principal Component Analysis (PCA)**: Projects data onto axes of maximum variance.
+        - **Linear Discriminant Analysis (LDA)**: Maximizes class separability (supervised).
+        - **Independent Component Analysis (ICA)**: Finds statistically independent components.
+        - **Non-Negative Matrix Factorization (NMF)**: Factorizes data into non-negative components.
+    - **Nonlinear Methods**:
+        - **t-SNE**: Preserves local similarities for visualization.
+        - **UMAP**: Balances local/global structure, faster than t-SNE.
+        - **Isomap, LLE**: Preserve manifold structure.
+        - **Autoencoders**: Neural networks learn compressed representations.
+- **Pros**: Captures more structure, powerful.
+- **Cons**: Less interpretable, can be complex.
 
 ## 🔍 Choosing the Right Technique
 
