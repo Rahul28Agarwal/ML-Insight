@@ -1,3 +1,7 @@
+# Guide to Decision Trees
+
+_A complete walkthrough of how decision trees work with Python examples and diagrams._
+
 Decision Tree
 Created time April 29, 2025 926 AM
 Last edited time May 15, 2025 459 PM
@@ -428,3 +432,6 @@ node.
 Decision Tree from Scratch
 Decision Tree from Scratch
 Decision Tree 10
+
+---
+*Authored by Rahul Aggarwal — empowering practical machine learning, one concept at a time.*
