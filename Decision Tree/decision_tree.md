@@ -3,20 +3,6 @@
 *A structured walkthrough of Decision Tree algorithms for classification and regression, including theoretical foundations, splitting criteria, pruning, and practical examples.*
 
 
-## 📘 Executive Summary
-
-Decision Trees are flexible, non-parametric models for classification and regression that partition data via a recursive splitting process.
-
-- Use impurity measures like Entropy, Gini, or variance reduction.
-
-- Bias–Variance Trade-off is managed via pruning and depth control.
-
-- Feature importance helps interpret models.
-
-- Decision Trees form the backbone of ensembles like Random Forest and Gradient Boosting.
-
----
-
 ## 📚 Table of Contents
 
 1. [Introduction](#-introduction)
@@ -43,7 +29,7 @@ Decision Trees are flexible, non-parametric models for classification and regres
 
 ---
 
-## 📌 Introduction
+## Introduction
 
 Decision Trees are supervised learners that split data into homogeneous subsets by testing feature values at each node.
 
@@ -55,7 +41,7 @@ Decision Trees are supervised learners that split data into homogeneous subsets 
 
 ---
 
-## 🧠 Theoretical Foundations
+## Theoretical Foundations
 
 **Divide & Conquer**: Recursively partition feature space into axis-aligned regions.
 
@@ -71,9 +57,9 @@ Decision Trees are supervised learners that split data into homogeneous subsets 
 
 ---
 
-## ✂️ Splitting Criteria
+## Splitting Criteria
 
-### 🔹 Entropy & Information Gain (ID3/C4.5)
+### Entropy & Information Gain (ID3/C4.5)
 
 Entropy measures the uncertainty (disorder) of a class distribution.
 
@@ -83,13 +69,13 @@ Information Gain measures the reduction in entropy from a split.
 
 `IG(S, A) = Entropy(S) - Σ (|Sᵥ| / |S|) * Entropy(Sᵥ)`
 
-### 🔸 Gini Impurity (CART)
+### Gini Impurity (CART)
 
 Gini measures misclassification probability for a random sample.
 
 `Gini(S) = 1 - Σ pᵢ²`
 
-### 📉 Variance Reduction (for Regression)
+### Variance Reduction (for Regression)
 
 `MSE(S) = (1/|S|) * Σ (yᵢ - ȳ)²`
 
@@ -97,7 +83,7 @@ Split is selected to maximize drop in MSE after split (ΔMSE).
 
 ---
 
-## 🌲 Tree Construction Process
+## Tree Construction Process
 
 ```mermaid
 flowchart LR
@@ -112,7 +98,7 @@ Tree grows recursively using greedy split selection based on impurity reduction.
 
 ---
 
-## 🧮 Handling Continuous and Categorical Features
+## Handling Continuous and Categorical Features
 
 **Continuous Features**:
 
@@ -212,30 +198,6 @@ y_quad = X_quad ** 2 + 0.025 * np.random.randn(200, 1)
 tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
 tree_reg.fit(X_quad, y_quad)
 ```
-
----
-
-## 🧮 How CART Algorithm Works
-
-CART creates binary trees for both classification and regression.
-
-Uses:
-- Gini for classification
-- MSE for regression
-
-### Cost Function:
-- Weighted impurity for classification
-- Weighted MSE for regression
-
-### Construction Flow:
-```mermaid
-flowchart TD
-    A[Root Node: All Data] -->|Best Split| B1[Left Child Node]
-    A -->|Best Split| B2[Right Child Node]
-    B1 --> C1[Leaf or Internal Node]
-    B2 --> C2[Leaf or Internal Node]
-```
-
 ---
 
 *Authored by Rahul Aggarwal — empowering practical machine learning, one concept at a time.*
