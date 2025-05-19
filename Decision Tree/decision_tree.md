@@ -199,5 +199,26 @@ tree_reg = DecisionTreeRegressor(max_depth=2, random_state=42)
 tree_reg.fit(X_quad, y_quad)
 ```
 ---
+## 🧮 How CART Algorithm Works
+
+CART creates binary trees for both classification and regression.
+
+Uses:
+- Gini for classification
+- MSE for regression
+
+### Cost Function:
+- Weighted impurity for classification
+- Weighted MSE for regression
+
+### Construction Flow:
+```mermaid
+flowchart TD
+    A[Root Node: All Data] -->|Best Split| B1[Left Child Node]
+    A -->|Best Split| B2[Right Child Node]
+    B1 --> C1[Leaf or Internal Node]
+    B2 --> C2[Leaf or Internal Node]
+```
+---
 
 *Authored by Rahul Aggarwal — empowering practical machine learning, one concept at a time.*

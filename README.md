@@ -9,22 +9,18 @@ This repository is a living library of articles and walkthroughs that explain co
 ## 📂 Contents
 
 - `dimensionality-reduction/`: Concepts like PCA, t-SNE, UMAP with case studies
-
+- `decision-tree/`: Full guide to decision trees including theory, math, visualizations, pruning, and scikit-learn examples
 
 ## 🧾 How to Use
 
 - Browse by topic folder
-
 - Read the `README.md` in each for explanation and diagrams
-
 - Use links to notebooks or articles for deeper dives
 
 ## 🛠 Tools & Format
 
 - Articles are in Markdown (`.md`) and Jupyter Notebooks (`.ipynb`)
-
 - Visuals: Mermaid, matplotlib, seaborn, Graphviz, screenshots
-
 - Code in Python (Scikit-learn, Pandas, NumPy, PyTorch/TensorFlow)
 
 ## 🤝 Contributing
